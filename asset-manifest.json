@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/TowerVision.io/static/css/main.c776f811.css",
-    "main.js": "/TowerVision.io/static/js/main.6ee46bc4.js",
+    "main.js": "/TowerVision.io/static/js/main.de72699e.js",
     "index.html": "/TowerVision.io/index.html",
     "main.c776f811.css.map": "/TowerVision.io/static/css/main.c776f811.css.map",
-    "main.6ee46bc4.js.map": "/TowerVision.io/static/js/main.6ee46bc4.js.map"
+    "main.de72699e.js.map": "/TowerVision.io/static/js/main.de72699e.js.map"
   },
   "entrypoints": [
     "static/css/main.c776f811.css",
-    "static/js/main.6ee46bc4.js"
+    "static/js/main.de72699e.js"
   ]
 }
