@@ -1,0 +1,42 @@
+[
+    {
+        "id": "071_71_03_003",
+        "country": "portugal",
+        "question": "Para que servia originalmente a Torre de Belém?",
+        "options": [
+            "A) Um ponto de embarque e desembarque para exploradores portugueses",
+            "B) Um palácio real",
+            "C) Um observatório astronômico",
+            "D) Um forte defensivo primário"
+        ],
+        "correct_answer": "D) Um forte defensivo primário",
+        "answer": {
+            "TowerVision9B": "D) Um forte defensivo primário",
+            "Qwen2.5-7B": "A) Um ponto de embarque e desembarque para exploradores portugueses",
+            "LLaVa-Next7B": "C) Um observatório astronômico",
+            "Pixtral": "C) Um observatório astronômico",
+            "Phi4": "B) Um palácio real"
+        },
+        "image": "071_71_03_003_0.png"
+    },
+    {
+        "id": "071_71_03_003",
+        "country": "cs",
+        "question": "Jakým architektonickým stylem je Karlův most známý?",
+        "options": [
+            "A) Středověký kamenný oblouk",
+            "B) gotika",
+            "C) baroko",
+            "D) renesance"
+        ],
+        "answer": {
+            "TowerVision9B": "D) renesance",
+            "Qwen2.5-7B": "A) Středověký kamenný oblouk",
+            "LLaVa-Next7B": "C) baroko",
+            "Pixtral": "B) gotika",
+            "Phi4": "D) renesance"
+        },
+        "correct_answer": "D) renesance",
+        "image": "018_18_04_022_0.png"
+    }
+]
