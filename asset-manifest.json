@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TowerVision.io/static/css/main.c776f811.css",
+    "main.js": "/TowerVision.io/static/js/main.e608b182.js",
+    "index.html": "/TowerVision.io/index.html",
+    "main.c776f811.css.map": "/TowerVision.io/static/css/main.c776f811.css.map",
+    "main.e608b182.js.map": "/TowerVision.io/static/js/main.e608b182.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c776f811.css",
+    "static/js/main.e608b182.js"
+  ]
+}
