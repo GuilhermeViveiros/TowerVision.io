@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Abstract.css';
 
-
 const HeroSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
   const [examples, setExamples] = useState([]);
@@ -195,17 +194,18 @@ const HeroSection = () => {
                 >
                   Patrick Fernandes <sup>1,2,4</sup>
                 </a>
-                <a 
-                  href="https://ssantos97.github.io/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="author-name author-link"
-                >
-                  Saul Santos <sup>1,2</sup>
-                </a>
+                
               </div>
               
               <div className="authors-group">
+                <a 
+                    href="https://ssantos97.github.io/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="author-name author-link"
+                  >
+                  Saul Santos <sup>1,2</sup>
+                </a>
                 <a 
                   href="https://sonalsannigrahi.github.io/" 
                   target="_blank" 
@@ -222,7 +222,11 @@ const HeroSection = () => {
                 >
                   Emmanouil Zaranis <sup>1,2</sup>
                 </a>
-                <a 
+                
+              </div>
+              
+              <div className="authors-group">
+              <a 
                   href="https://nunonmg.github.io/" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -238,9 +242,6 @@ const HeroSection = () => {
                 >
                   Amin Farajian <sup>3</sup>
                 </a>
-              </div>
-              
-              <div className="authors-group">
                 <a 
                   href="https://andre-martins.github.io/" 
                   target="_blank" 
@@ -262,9 +263,9 @@ const HeroSection = () => {
           
           <div className="affiliations">
             <div className="affiliation-group">
-              <img src={`${process.env.PUBLIC_URL}/institution_logos/IT.png`} alt="IT" className="affiliation-logo" />
-              <img src={`${process.env.PUBLIC_URL}/institution_logos/IST.jpg`} alt="IST" className="affiliation-logo" />
-              <img src={`${process.env.PUBLIC_URL}/institution_logos/Unbabel.png`} alt="Unbabel" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/it.png`} alt="IT" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/ist.jpg`} alt="IST" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/unbabel.png`} alt="Unbabel" className="affiliation-logo" />
               <img src={`${process.env.PUBLIC_URL}/institution_logos/cmu.png`} alt="CMU" className="affiliation-logo" />
             </div>
           </div>
