@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Abstract.css';
 
+
 const HeroSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
   const [examples, setExamples] = useState([]);
 
   useEffect(() => {
     // Fetch the cultural examples data
-    fetch('/data.json')
+    fetch(`${process.env.PUBLIC_URL}/data.json`)
       .then(response => response.json())
       .then(data => setExamples(data))
       .catch(error => console.error('Error loading examples:', error));
@@ -53,7 +54,7 @@ const HeroSection = () => {
           <div className="hero-content">
             <div className="paper-title">
                 <div className="tower-container-title">
-                  <img src="/Tower.png" alt="Tower" className="tower-image-title" />
+                  <img src={`${process.env.PUBLIC_URL}/Tower.png`} alt="Tower" className="tower-image-title" />
                   <div className="eye-overlay-title">
                     <div className="custom-eye">
                       <div className="eye-white">
@@ -131,7 +132,7 @@ const HeroSection = () => {
                   
                   <div className="example-image">
                     <img 
-                      src={`/cultural_examples/${examples[currentExample].image}`} 
+                      src={`${process.env.PUBLIC_URL}/cultural_examples/${examples[currentExample].image}`} 
                       alt="Cultural example" 
                       className="cultural-image"
                     />
@@ -261,10 +262,10 @@ const HeroSection = () => {
           
           <div className="affiliations">
             <div className="affiliation-group">
-              <img src="/institution_logos/IT.png" alt="IT" className="affiliation-logo" />
-              <img src="/institution_logos/IST.jpg" alt="IST" className="affiliation-logo" />
-              <img src="/institution_logos/Unbabel.png" alt="Unbabel" className="affiliation-logo" />
-              <img src="/institution_logos/cmu.png" alt="CMU" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/IT.png`} alt="IT" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/IST.jpg`} alt="IST" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/Unbabel.png`} alt="Unbabel" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/cmu.png`} alt="CMU" className="affiliation-logo" />
             </div>
           </div>
           

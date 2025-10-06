@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Tower Vision - Multilingual Multi-modal Model by Sardine Group",
   "main": "index.js",
+  "homepage": "https://GuilhermeViveiros.github.io/TowerVision.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
