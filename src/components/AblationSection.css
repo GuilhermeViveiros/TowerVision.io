@@ -1,0 +1,92 @@
+.ablation-section {
+  background: #ffffff;
+  padding: 4rem 0 2rem 0;
+  position: relative;
+}
+
+.ablation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: 'Libre Baskerville', 'Baskerville', 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d5a87;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-placeholder {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 16px;
+  border: 4px dashed #d1d5db;
+  box-shadow: 0 6px 24px rgba(45, 90, 135, 0.12);
+}
+
+.placeholder-text {
+  font-size: 1.3rem;
+  color: #9ca3af;
+  margin: 0;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Enhanced button styles for ablation section */
+.ablation-section button,
+.ablation-section .btn,
+.ablation-section .button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 3px solid #d1d5db;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ablation-section button:hover,
+.ablation-section .btn:hover,
+.ablation-section .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #2d5a87;
+  background: #f8fafc;
+}
+
+/* Enhanced border styles */
+.ablation-section .bordered-element,
+.ablation-section .card,
+.ablation-section .panel {
+  border: 3px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.ablation-section .bordered-element:hover,
+.ablation-section .card:hover,
+.ablation-section .panel:hover {
+  border-color: #2d5a87;
+  box-shadow: 0 6px 20px rgba(45, 90, 135, 0.1);
+}
