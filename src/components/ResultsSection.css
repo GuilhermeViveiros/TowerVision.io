@@ -1,8 +1,9 @@
 .results-section {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: #f8fafc;
+  /* linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); */
   padding: 2rem 0 4rem 0;
   position: relative;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 .results-container {
@@ -328,6 +329,35 @@
   font-weight: 700;
 }
 
+.radar-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 2rem;
+}
+
+.radar-chart-image {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/* Responsive adjustments for radar chart */
+@media (max-width: 768px) {
+  .radar-chart-image {
+    max-width: 100%;
+  }
+  
+  .radar-chart-container {
+    padding: 1rem;
+    margin: 2rem 0;
+  }
+}
+
 .navigation-section {
   margin: 3rem 0;
   text-align: center;
@@ -376,7 +406,7 @@
 }
 
 .key-insights {
-  margin-top: 3rem;
+  margin-top: 0rem;
 }
 
 .insights-title {

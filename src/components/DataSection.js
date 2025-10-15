@@ -73,27 +73,6 @@ const DataSection = () => {
             </div>
           </div>
 
-          <div className="dataset-stats">
-            <h3 className="subsection-title">Dataset Statistics</h3>
-            <div className="stats-grid">
-              <div className="stat-card">
-                <div className="stat-number">6M</div>
-                <div className="stat-label">Total Samples</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">20</div>
-                <div className="stat-label">Languages</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">37%</div>
-                <div className="stat-label">Multilingual</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">20%</div>
-                <div className="stat-label">Created Data</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import './Abstract.css';
 const HeroSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
   const [examples, setExamples] = useState([]);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
     // Fetch the cultural examples data
@@ -18,16 +19,34 @@ const HeroSection = () => {
     if (examples.length > 0) {
       const interval = setInterval(() => {
         setCurrentExample(prev => (prev + 1) % examples.length);
-      }, 5000);
+      }, 7000);
       return () => clearInterval(interval);
     }
   }, [examples]);
 
-  const getAnswerClass = (modelName, answer, correctAnswer) => {
-    if (modelName === 'TowerVision9B') {
-      return answer === correctAnswer ? 'answer-correct-tower' : 'answer-wrong-tower';
+  const getAnswerClass = (modelName, answer, correctAnswer, exampleType) => {
+    let isCorrect = false;
+    
+    if (exampleType === 'translation') {
+      // For translation, check if model is in the correct answer array
+      isCorrect = correctAnswer.includes(modelName);
+    } else {
+      // For other types, check exact match or if correct answer is contained in the response
+      if (Array.isArray(correctAnswer)) {
+        // If correctAnswer is an array, check if any of the correct answers are in the response
+        isCorrect = correctAnswer.some(correct => 
+          answer === correct || answer.toLowerCase().includes(correct.toLowerCase())
+        );
+      } else {
+        // Single correct answer - check exact match or substring
+        isCorrect = answer === correctAnswer || answer.toLowerCase().includes(correctAnswer.toLowerCase());
+      }
     }
-    return answer === correctAnswer ? 'answer-correct-other' : 'answer-wrong-other';
+    
+    if (modelName === 'TowerVision9B' || modelName === 'TowerVision-9B') {
+      return isCorrect ? 'answer-correct-tower' : 'answer-wrong-tower';
+    }
+    return isCorrect ? 'answer-correct-other' : 'answer-wrong-other';
   };
 
   const getFlagEmoji = (country) => {
@@ -41,7 +60,14 @@ const HeroSection = () => {
       'brazil': '🇧🇷',
       'china': '🇨🇳',
       'japan': '🇯🇵',
-      'korea': '🇰🇷'
+      'korea': '🇰🇷',
+      "usa": "🇺🇸",
+      "dutch": "🇳🇱",
+      "hindi": "🇮🇳",
+      "ukrainian": "🇺🇦",
+      "russian": "🇷🇺",
+      "polish": "🇵🇱"
+
     };
     return flags[country] || '🌍';
   };
@@ -75,15 +101,8 @@ const HeroSection = () => {
             <div className="model-descriptions">
               <div className="model-item">
                 <div className="model-text">
-                  <span className="model-name">TowerVision2B:</span>
-                  <span className="model-desc">a compact multilingual multimodal LLM optimized for efficiency while maintaining strong performance across 20 languages.</span>
-                </div>
-              </div>
-
-              <div className="model-item">
-                <div className="model-text">
-                  <span className="model-name">TowerVision9B:</span>
-                  <span className="model-desc">a strong multilingual multimodal LLM capable of advanced visual understanding and reasoning across 20 languages.</span>
+                  <span className="model-name">TowerFamily:</span>
+                  <span className="model-desc"> collection of strong multimodal models featuring <a href="https://huggingface.co/utter-project/TowerVision-2B" target="_blank" rel="noopener noreferrer" className="model-link"><strong>TowerVision-2B/9B</strong></a> for advanced image understanding and <a href="https://huggingface.co/utter-project/TowerVideo-2B" target="_blank" rel="noopener noreferrer" className="model-link"><strong>TowerVideo-2B/9B</strong></a> for sophisticated video comprehension, with superior multimodal multilingual translation capabilities and cultural awareness across 20 languages*.</span>
                 </div>
               </div>
 
@@ -95,22 +114,45 @@ const HeroSection = () => {
               </div>
             </div>
 
+            <div className="language-footnote">
+              <p className="footnote-text">
+                *Supported languages/dialetcs: English, German, Dutch, Spanish (Latin America), French, Portuguese (Portugal), Portuguese (Brazilian), Ukrainian, Hindi, Chinese (Simplified), Chinese (Traditional), Russian, Czech, Korean, Japanese, Italian, Polish, Romanian, Norwegian (Nynorsk) and Norwegian (Bokmål)
+              </p>
+            </div>
+
             <div className="hero-buttons">
               <button className="btn-primary">
                 📄 arXiv
               </button>
-              <button className="btn-secondary">
-                📋 PDF
-              </button>
-              <button className="btn-secondary">
+              <button 
+                className="btn-secondary"
+                onClick={() => window.open('https://github.com/GuilhermeViveiros/LLaVA-NeXT', '_blank')}
+              >
                 💻 Code
               </button>
-              <button className="btn-secondary">
+              <button 
+                className="btn-secondary"
+                onClick={() => window.open('https://huggingface.co/collections/utter-project/towervision-689a10be35396972889cadba', '_blank')}
+              >
                 🤗 Checkpoints
               </button>
-              <button className="btn-secondary">
-                📊 VisionBlocks
-              </button>
+              <div className="button-with-tooltip">
+                <button 
+                  className="btn-secondary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowTooltip(true);
+                    setTimeout(() => setShowTooltip(false), 3000);
+                  }}
+                >
+                  📊 VisionBlocks
+                </button>
+                {showTooltip && (
+                  <div className="button-tooltip">
+                    VisionBlocks dataset will be released in the upcoming weeks!
+                  </div>
+                )}
+              </div>
         
             </div>
           </div>
@@ -123,38 +165,72 @@ const HeroSection = () => {
                     <div className="country-flag">
                       {getFlagEmoji(examples[currentExample].country)}
                     </div>
-                    <div className="example-title">Cultural Understanding</div>
+                     <div className="example-title">
+                       {examples[currentExample].type === 'cultural' ? 'Cultural Understanding' : 'Multilingual Translation'}
+                     </div>
                     <div className="example-counter">
                       {currentExample + 1} / {examples.length}
                     </div>
                   </div>
                   
                   <div className="example-image">
-                    <img 
-                      src={`${process.env.PUBLIC_URL}/cultural_examples/${examples[currentExample].image}`} 
-                      alt="Cultural example" 
-                      className="cultural-image"
-                    />
+                      <img 
+                       src={`${process.env.PUBLIC_URL}/${examples[currentExample].type === 'cultural' ? 'cultural_examples' : 'translation_examples'}/${examples[currentExample].image}`} 
+                       alt={`${examples[currentExample].type} example`} 
+                        className="cultural-image"
+                      />
                   </div>
 
                   <div className="example-question">
-                    <p>{examples[currentExample].question}</p>
-                  </div>
-
-                  <div className="model-answers-compact">
-                    {Object.entries(examples[currentExample].answer).map(([model, answer]) => (
-                      <div 
-                        key={model} 
-                        className={`model-answer-compact ${getAnswerClass(model, answer, examples[currentExample].correct_answer)}`}
-                      >
-                        <span className="model-name-compact">{model.replace('TowerVision9B', 'TowerVision')}:</span>
-                        <span className="model-response-compact">{answer}</span>
-                        {model === 'TowerVision9B' && answer === examples[currentExample].correct_answer && (
-                          <span className="correct-badge">✓</span>
-                        )}
-                      </div>
+                    {examples[currentExample].question.split('\n').map((line, index) => (
+                      <p key={index}>{line}</p>
                     ))}
                   </div>
+
+                  {examples[currentExample].type === 'cultural' && examples[currentExample].options && (
+                    <div className="example-options">
+                      {examples[currentExample].options.map((option, index) => (
+                        <div key={index} className="option-item">
+                          {option}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                   <div className="model-answers-table">
+                     {Object.entries(examples[currentExample].answer)
+                       .filter(([model, answer]) => {
+                         // Filter out LLaVA-Next models and other models we don't want to show
+                         const modelsToHide = [
+                           'LLaVa-Next7B',
+                           'Llama3-Llava-Next-8B',
+                           'LLaVa-Next-7B',
+                           'Aya-Vision-8B'
+                         ];
+                         return !modelsToHide.includes(model) && answer !== 'Add';
+                       })
+                       .map(([model, answer]) => {
+                         const answerClass = getAnswerClass(model, answer, examples[currentExample].correct_answer, examples[currentExample].type);
+                         const isCorrect = answerClass.includes('correct');
+                         
+                         return (
+                           <div 
+                             key={model} 
+                             className={`model-answer-row ${answerClass}`}
+                           >
+                             <div className="model-name-cell">
+                               {model.replace('TowerVision9B', 'TowerVision-9B')}
+                             </div>
+                             <div className="model-response-cell">
+                               {answer}
+                               {isCorrect && (
+                                 <span className="correct-badge">✓</span>
+                               )}
+                             </div>
+                           </div>
+                         );
+                       })}
+                   </div>
                 </div>
               )}
               
@@ -243,20 +319,20 @@ const HeroSection = () => {
                   Amin Farajian <sup>3</sup>
                 </a>
                 <a 
-                  href="https://andre-martins.github.io/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="author-name author-link"
-                >
-                  Andre Martins <sup>1,2,3</sup>
-                </a>
-                <a 
                   href="https://www.phontron.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="author-name author-link"
                 >
                   Graham Neubig <sup>4</sup>
+                </a>
+                <a 
+                  href="https://andre-martins.github.io/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="author-name author-link"
+                >
+                  Andre Martins <sup>1,2,3</sup>
                 </a>
               </div>
             </div>

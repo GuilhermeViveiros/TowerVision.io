@@ -27,6 +27,17 @@ const ResultsSection = () => {
     { model: "TowerVision-9B", enCs: "95.1", enDe: "98.1", enFr: "95.6", enDeCom: "72.0", enFrCom: "78.8", enRuCom: "75.6", enZhCom: "77.4", isTower: true, hasBest: true }
   ];
 
+  // Video Multilingual Performance data
+  const videoData = [
+    { model: "ViMUL-7B", ar: "41.5", bn: "35.4", zh: "37.0", en: "48.6", fr: "48.3", de: "43.9", hi: "39.2", ja: "37.8", ru: "45.7", si: "21.2", es: "44.3", sv: "41.4", ta: "23.3", ur: "36.8", hasBest: true },
+    { model: "LLaVA-Video-7B", ar: "38.8", bn: "30.4", zh: "43.2", en: "53.3", fr: "49.2", de: "45.4", hi: "34.2", ja: "33.4", ru: "38.2", si: "18.1", es: "45.7", sv: "39.8", ta: "21.9", ur: "33.8", hasBest: true },
+    { model: "VideoLLaMA3-7B", ar: "45.6", bn: "36.6", zh: "48.0", en: "52.9", fr: "47.1", de: "43.8", hi: "37.5", ja: "39.4", ru: "44.8", si: "25.1", es: "45.4", sv: "38.5", ta: "22.8", ur: "32.1", hasBest: true },
+    { model: "TowerVision-2B", ar: "18.9", bn: "19.5", zh: "21.7", en: "34.2", fr: "28.9", de: "28.3", hi: "25.1", ja: "22.2", ru: "24.8", si: "16.3", es: "30.4", sv: "27.1", ta: "16.1", ur: "19.9", isTower: true },
+    { model: "TowerVideo-2B", ar: "23.0", bn: "18.9", zh: "35.9", en: "45.2", fr: "39.6", de: "39.7", hi: "37.2", ja: "34.1", ru: "38.0", si: "17.1", es: "37.4", sv: "38.0", ta: "17.7", ur: "18.7", isTower: true },
+    { model: "TowerVision-9B", ar: "34.2", bn: "25.4", zh: "35.3", en: "46.7", fr: "41.1", de: "40.8", hi: "34.2", ja: "28.1", ru: "40.3", si: "19.8", es: "40.5", sv: "39.6", ta: "21.6", ur: "26.4", isTower: true },
+    { model: "TowerVideo-9B", ar: "38.6", bn: "22.1", zh: "44.8", en: "51.9", fr: "49.1", de: "47.1", hi: "32.2", ja: "42.3", ru: "40.9", si: "20.8", es: "46.0", sv: "44.8", ta: "24.1", ur: "19.5", isTower: true, hasBest: true }
+  ];
+
   const getBestInColumn = (data, column) => {
     return Math.max(...data.map(row => parseFloat(row[column])));
   };
@@ -39,124 +50,11 @@ const ResultsSection = () => {
     <section className="results-section">
       <div className="results-container">
 
-        <div className="tables-container">
-          {/* Vision-Language Model Performance Table */}
-          <div className="table-section">
-            <div className="table-header">
-              <div className="table-title-container">
-                <h3 className="table-title">VLMs Performance on several benchmarks</h3>
-                <p className="table-subtitle">Reported values correspond to final accuracy (↑)</p>
-              </div>
-            </div>
-            
-            <div className="table-wrapper">
-              <table className="performance-table">
-                <colgroup>
-                  <col style={{width: '25%'}} />
-                  <col style={{width: '12.5%'}} />
-                  <col style={{width: '12.5%'}} />
-                  <col style={{width: '12.5%'}} />
-                  <col style={{width: '18.75%'}} />
-                  <col style={{width: '18.75%'}} />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th rowSpan={2} className="model-header">Model</th>
-                    <th colSpan={2} className="category-header english-header">English (↑)</th>
-                    <th colSpan={3} className="category-header multilingual-header">Multilingual (↑)</th>
-                  </tr>
-                  <tr>
-                    <th className="metric-header">TextVQA</th>
-                    <th className="metric-header">OCRBench</th>
-                    <th className="metric-header">CC-OCR</th>
-                    <th className="metric-header">ALM-Bench (en)</th>
-                    <th className="metric-header">ALM-Bench (multi)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {vlmData.map((row, index) => (
-                    <tr key={index} className={`table-row ${row.isTower ? 'tower-row' : ''}`}>
-                      <td className="model-cell">{row.model}</td>
-                      <td className={`score-cell ${isBestScore(vlmData, row.textVQA, 'textVQA') ? 'best-score' : ''}`}>{row.textVQA}</td>
-                      <td className={`score-cell ${isBestScore(vlmData, row.ocrBench, 'ocrBench') ? 'best-score' : ''}`}>{row.ocrBench}</td>
-                      <td className={`score-cell ${isBestScore(vlmData, row.ccOCR, 'ccOCR') ? 'best-score' : ''}`}>{row.ccOCR}</td>
-                      <td className={`score-cell ${isBestScore(vlmData, row.almEn, 'almEn') ? 'best-score' : ''}`}>{row.almEn}</td>
-                      <td className={`score-cell ${isBestScore(vlmData, row.almMulti, 'almMulti') ? 'best-score' : ''}`}>{row.almMulti}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Multimodal Translation Table */}
-          <div className="table-section">
-            <div className="table-header">
-              <div className="table-title-container">
-                <h3 className="table-title">Multimodal Translation Benchmarks</h3>
-                <p className="table-subtitle">We report xComet for Multi30K and contrastive pairwise accuracy for CoMMuTE.</p>
-              </div>
-            </div>
-            
-            <div className="table-wrapper">
-              <table className="performance-table">
-                <colgroup>
-                  <col style={{width: '25%'}} />
-                  <col style={{width: '9.375%'}} />
-                  <col style={{width: '9.375%'}} />
-                  <col style={{width: '9.375%'}} />
-                  <col style={{width: '11.875%'}} />
-                  <col style={{width: '11.875%'}} />
-                  <col style={{width: '11.875%'}} />
-                  <col style={{width: '11.875%'}} />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th rowSpan={2} className="model-header">Model</th>
-                    <th colSpan={3} className="category-header multi30k-header">Multi30K (↑)</th>
-                    <th colSpan={4} className="category-header commute-header">CoMMuTE (↑)</th>
-                  </tr>
-                  <tr>
-                    <th className="metric-header">en→cs</th>
-                    <th className="metric-header">en→de</th>
-                    <th className="metric-header">en→fr</th>
-                    <th className="metric-header">en→de</th>
-                    <th className="metric-header">en→fr</th>
-                    <th className="metric-header">en→ru</th>
-                    <th className="metric-header">en→zh</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {mtData.map((row, index) => (
-                    <tr key={index} className={`table-row ${row.isTower ? 'tower-row' : ''}`}>
-                      <td className="model-cell">{row.model}</td>
-                      <td className={`score-cell ${isBestScore(mtData, row.enCs, 'enCs') ? 'best-score' : ''}`}>{row.enCs}</td>
-                      <td className={`score-cell ${isBestScore(mtData, row.enDe, 'enDe') ? 'best-score' : ''}`}>{row.enDe}</td>
-                      <td className={`score-cell ${isBestScore(mtData, row.enFr, 'enFr') ? 'best-score' : ''}`}>{row.enFr}</td>
-                      <td className={`score-cell ${isBestScore(mtData, row.enDeCom, 'enDeCom') ? 'best-score' : ''}`}>{row.enDeCom}</td>
-                      <td className={`score-cell ${isBestScore(mtData, row.enFrCom, 'enFrCom') ? 'best-score' : ''}`}>{row.enFrCom}</td>
-                      <td className={`score-cell ${isBestScore(mtData, row.enRuCom, 'enRuCom') ? 'best-score' : ''}`}>{row.enRuCom}</td>
-                      <td className={`score-cell ${isBestScore(mtData, row.enZhCom, 'enZhCom') ? 'best-score' : ''}`}>{row.enZhCom}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
         <div className="key-insights">
           <h3 className="insights-title">Key Insights</h3>
+         
           <div className="insights-grid">
-            <div className="insight-card">
-              <div className="insight-icon">🌍</div>
-              <h4 className="insight-heading">Multilingual Excellence</h4>
-              <p className="insight-text">
-                TowerVision-9B achieves the best multilingual performance on ALM-Bench, 
-                demonstrating superior cross-lingual understanding capabilities.
-              </p>
-            </div>
-            
+
             <div className="insight-card">
               <div className="insight-icon">🔤</div>
               <h4 className="insight-heading">Translation Quality</h4>
@@ -167,6 +65,15 @@ const ResultsSection = () => {
             </div>
             
             <div className="insight-card">
+              <div className="insight-icon">🌍</div>
+              <h4 className="insight-heading">Cultural Excellence</h4>
+              <p className="insight-text">
+                TowerVision-9B achieves the best culturally aware multimodal multilingual performance on ALM-Bench, 
+                demonstrating superior cross-lingual understanding capabilities.
+              </p>
+            </div>
+
+            <div className="insight-card">
               <div className="insight-icon">⚡</div>
               <h4 className="insight-heading">Efficiency & Scale</h4>
               <p className="insight-text">
@@ -176,6 +83,14 @@ const ResultsSection = () => {
             </div>
           </div>
         </div>
+
+         <div className="radar-chart-container">
+           <img 
+             src={`${process.env.PUBLIC_URL}/test.png`}
+             alt="Benchmark Performance Comparison - Radar Chart showing TowerVision model performance across multiple benchmarks"
+             className="radar-chart-image"
+           />
+         </div>
 
         <div className="navigation-section">
           <p className="navigation-intro">
@@ -188,7 +103,7 @@ const ResultsSection = () => {
                 onClick={() => document.getElementById('model-structure').scrollIntoView({ behavior: 'smooth' })}
               >
                 Model Structure
-              </button>: We present the architecture and design choices behind TowerVision, detailing how we adapt vision-language models for multilingual capabilities.
+              </button>: We present the architecture and design choices behind TowerVision and TowerVideo, detailing how we adapt vision-language models for multilingual capabilities.
             </p>
             <p className="navigation-sentence">
               <button 
@@ -197,15 +112,7 @@ const ResultsSection = () => {
               >
                 Data
               </button>: We introduce VisionBlocks, our comprehensive multilingual multimodal instruction tuning dataset spanning 20 languages with cultural awareness.
-            </p>
-            <p className="navigation-sentence">
-              <button 
-                className="nav-title-link"
-                onClick={() => document.getElementById('ablation').scrollIntoView({ behavior: 'smooth' })}
-              >
-                Ablation
-              </button>: We analyze the impact of different training strategies and architectural choices on multilingual performance across various benchmarks.
-            </p>
+            </p>           
           </div>
         </div>
 
