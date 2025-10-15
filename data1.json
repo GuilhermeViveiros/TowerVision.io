@@ -1,0 +1,95 @@
+[
+    {
+        "type": "translation",
+        "id": "112",
+        "country": "france",
+        "question": "Translate the following source text from English to French: \n A black dog is retrieving a ball in water.",
+        "correct_answer": ["TowerVision-9B"],
+        "answer": {
+            "TowerVision-9B": "Un chien noir récupère une balle dans l'eau.",
+            "Qwen2.5-7B": "Le chien noir est en train de récupérer une balle dans l'eau.",
+            "LLaVa-Next7B": "Add",
+            "Pixtral": "Add",
+            "Phi4": "Add"
+        },
+        "image": "image_112_0.png"
+    },
+    {
+        "type": "translation",
+        "id": "113",
+        "country": "cs",
+        "question": "Translate the following source text from English to Czech: \n A man in white pants and a blue shirt is kicking a yellow boxing bag.",
+        "correct_answer": ["TowerVision-9B"],
+        "answer": {
+            "TowerVision-9B": "Muž ve světlých kalhotách a modrém tričku kopá do žlutého boxovacího pytlu.",
+            "Qwen2.5-7B": "Pánský v bílých kalhotách a modré košili se dělá kop na žlutou boxerskou pytel.",
+            "LLaVa-Next7B": "Add",
+            "Pixtral": "Add",
+            "Phi4": "Add"
+        },
+        "image": "image_113_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "071_71_03_003",
+        "country": "portugal",
+        "question": "Para que servia originalmente a Torre de Belém?",
+        "options": [
+            "A) Um ponto de embarque e desembarque para exploradores portugueses",
+            "B) Um palácio real",
+            "C) Um observatório astronômico",
+            "D) Um forte defensivo primário"
+        ],
+        "correct_answer": "D) Um forte defensivo primário",
+        "answer": {
+            "TowerVision9B": "D) Um forte defensivo primário",
+            "Qwen2.5-7B": "A) Um ponto de embarque e desembarque para exploradores portugueses",
+            "LLaVa-Next7B": "C) Um observatório astronômico",
+            "Pixtral": "C) Um observatório astronômico",
+            "Phi4": "B) Um palácio real"
+        },
+        "image": "071_71_03_003_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "071_71_03_003",
+        "country": "cs",
+        "question": "Jakým architektonickým stylem je Karlův most známý?",
+        "options": [
+            "A) Středověký kamenný oblouk",
+            "B) gotika",
+            "C) baroko",
+            "D) renesance"
+        ],
+        "answer": {
+            "TowerVision9B": "D) renesance",
+            "Qwen2.5-7B": "A) Středověký kamenný oblouk",
+            "LLaVa-Next7B": "C) baroko",
+            "Pixtral": "B) gotika",
+            "Phi4": "D) renesance"
+        },
+        "correct_answer": "D) renesance",
+        "image": "018_18_04_022_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "001_1_10_076",
+        "country": "usa",
+        "question": "The image represents the Media in United States Which TV show features the character wearing the school tie and shirt?",
+        "options": [
+            "A) Heartstopper",
+            "B) Bridgerton",
+            "C) Derry Girls",
+            "D) Sex Education"
+        ],
+        "correct_answer": "A) Heartstopper",
+        "answer": {
+            "TowerVision9B": "The image shows a character wearing a school tie and shirt. This is a key detail that helps identify the TV show. Among the options provided, \"Heartstopper\" is the only show that features a character wearing a school tie and shirt.",
+            "Qwen2.5-7B": "The character wearing the school tie and shirt is from the TV show \"Sex Education.\"",
+            "LLaVa-Next7B": "A) Heartstopper",
+            "Pixtral": "C) Derry Girls",
+            "Phi4": "D) Sex Education"
+        },
+        "image": "image_001_1_10_076_0.png"
+    }
+]

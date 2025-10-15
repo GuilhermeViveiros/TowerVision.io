@@ -1,5 +1,6 @@
-[
+[   
     {
+        "type": "cultural",
         "id": "071_71_03_003",
         "country": "portugal",
         "question": "Para que servia originalmente a Torre de Belém?",
@@ -12,14 +13,213 @@
         "correct_answer": "D) Um forte defensivo primário",
         "answer": {
             "TowerVision9B": "D) Um forte defensivo primário",
-            "Qwen2.5-7B": "A) Um ponto de embarque e desembarque para exploradores portugueses",
+            "Qwen2.5VL-7B-Instruct": "A) Um ponto de embarque e desembarque para exploradores portugueses",
             "LLaVa-Next7B": "C) Um observatório astronômico",
-            "Pixtral": "C) Um observatório astronômico",
-            "Phi4": "B) Um palácio real"
+            "CulturalPangea7B": "C) Um observatório astronômico",
+            "Aya-Vision-8B": "B) Um palácio real"
         },
         "image": "071_71_03_003_0.png"
     },
     {
+        "type": "cultural",
+        "id": "001_1_10_076",
+        "country": "usa",
+        "question": "The image represents the Media in United States Which TV show features the character wearing the school tie and shirt?",
+        "options": [
+            "A) Heartstopper",
+            "B) Bridgerton",
+            "C) Derry Girls",
+            "D) Sex Education"
+        ],
+        "correct_answer": "A) Heartstopper",
+        "answer": {
+            "TowerVision9B": "The image shows a character wearing a school tie and shirt. This is a key detail that helps identify the TV show. Among the options provided, \"Heartstopper\" is the only show that features a character wearing a school tie and shirt. Final Answer: A) Heartstopper",
+            "Qwen2.5VL-7B-Instruct": "The character wearing the school tie and shirt is from the TV show \"Sex Education.\" Final Answer: D) Sex Education",
+            "LLaVa-Next7B": "Final Answer: A) Heartstopper",
+            "CulturalPangea7B": "Final Answer: C) Derry Girls",
+            "Aya-Vision-8B": "Final Answer: D) Sex Education"
+        },
+        "image": "image_001_1_10_076_0.png"
+    },
+    {
+        "type": "translation",
+        "id": "112",
+        "country": "france",
+        "question": "Translate the following source text from English to French: \n A black dog is retrieving a ball in water.",
+        "correct_answer": ["TowerVision-9B"],
+        "answer": {
+            "TowerVision-9B": "Un chien noir récupère une balle dans l'eau.",
+            "Qwen2.5VL-7B-Instruct": "Le chien noir est en train de récupérer une balle dans l'eau.",
+            "Llama3-Llava-Next-8B": "Un chien noir est en train de récupérer une balle dans l'eau.",
+            "CulturalPangea7B": "Le chien noir est en train de récupérer une balle dans l'eau.",
+            "Aya-Vision-8B": "Un chien noir récupère une balle dans l'eau."
+        },
+        "image": "image_112_0.png"
+    },
+    {
+        "type": "translation",
+        "id": "113",
+        "country": "cs",
+        "question": "Translate the following source text from English to Czech: \n A man in white pants and a blue shirt is kicking a yellow boxing bag.",
+        "correct_answer": ["TowerVision-9B"],
+        "answer": {
+            "TowerVision-9B": "Muž ve světlých kalhotách a modrém tričku kopá do žlutého boxovacího pytlu.",
+            "Qwen2.5VL-7B-Instruct": "Pánský v bílých kalhotách a modré košili se dělá kop na žlutou boxerskou pytel.",
+            "LLaVa-Next7B": "Muž v bílých kalhotách a modré košili kopá žlutou boxerskou tašku.",
+            "CulturalPangea7B": "Muž v bílých kalhotách a modré košili kopá do žluté boxerské pytle.",
+            "Aya-Vision-8B": "Muž v bílých kalhotách a modré košili kopá do žluté boxerské pytle."
+        },
+        "image": "image_113_0.png"
+    },
+    {
+        "type": "cultural",
+        "country": "korea",
+        "id": "020_20_03_033",
+        "question": "이황은 어떤 분야에서 큰 공헌을 했나요?",
+        "options": [
+            "A) 철학",
+            "B) 수학",
+            "C) 천문학",
+            "D) 의학"
+        ],
+        "correct_answer": "Final Answer: A",
+        "answer": {
+            "TowerVision-9B": "이황은 조선시대의 유명한 성리학자로, 철학 분야에서 큰 공헌을 했습니다. 그는 성리학을 연구하고 가르치며, 조선의 사상적 기반을 마련하는 데 중요한 역할을 했습니다. Final Answer: A",
+            "Qwen2.5VL-7B-Instruct": "... Final Answer: C",
+            "Llama3-Llava-Next-8B": "... Final Answer: A",
+            "CulturalPangea7B": "... Final Answer: C",
+            "Aya-Vision-8B": "... Final Answer: A"
+        },
+        "image": "image_020_20_03_033_0.png"
+    },
+    {
+        "type": "cultural",
+        "country": "polish",
+        "id": "024_24_04_034",
+        "question": "Czego oczekują uczestnicy od mieszkańców domu przed rozpoczęciem występu?",
+        "options": [
+            "A) Sygnał",
+            "B) Prezent",
+            "C) Posiłek",
+            "D) Modlitwa"
+        ],
+        "correct_answer": "Final Answer: A",
+        "answer": {
+            "TowerVision-9B": "Uczestnicy oczekują od mieszkańców domu sygnału przed rozpoczęciem występu. Final Answer: A",
+            "Qwen2.5VL-7B-Instruct": "... Final Answer: B",
+            "Llama3-Llava-Next-8B": "... Final Answer: B",
+            "CulturalPangea7B": "... Final Answer: B",
+            "Aya-Vision-8B": "... Final Answer: A"
+        },
+        "image": "image_024_24_04_034_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "048_48_04_034",
+        "country": "russian",
+        "question": "Какому событию посвящён собор, изображённый на фотографии?",
+        "options": [
+            "A) Взятие Казани и Астрахани",
+            "B) Окончание Второй мировой войны",
+            "C) Строительство Транссибирской магистрали",
+            "D) Основание Москвы"
+        ],
+        "correct_answer": "Final Answer: A",
+        "answer": {
+            "TowerVision-9B": "Собор Василия Блаженного был построен в честь взятия Казани и Астрахани. Final Answer: A",
+            "Qwen2.5VL-7B-Instruct": "... Final Answer: D",
+            "Llama3-Llava-Next-8B": "... Final Answer: D",
+            "CulturalPangea7B": "... Final Answer: A",
+            "Aya-Vision-8B": "... Final Answer: D"
+        },
+        "image": "image_048_48_04_034_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "059_59_15_129",
+        "country": "ukrainian",
+        "question": "Яка основна мета покриття пам'ятника, що показаний на зображенні, мішками з піском?",
+        "options": [
+            "A) захистити від пошкоджень через обстріли з боку Росії",
+            "B) захистити від несприятливих погодних умов",
+            "C) відновити його первісний вигляд",
+            "D) використовувати як експеримент із художньою інсталяцією"
+        ],
+        "correct_answer": "Final Answer: A",
+        "answer": {
+            "TowerVision-9B": "The image shows a monument covered in sandbags, which is a clear indication of protective measures taken in response to potential threats. Given the context of Ukraine and the mention of shelling from Russia, the most logical explanation for this protective measure is to safeguard the monument from damage caused by shelling. Final Answer: A",
+            "Qwen2.5VL-7B-Instruct": "... Final Answer: D",
+            "Llama3-Llava-Next-8B": "... Final Answer: D",
+            "CulturalPangea7B": "... Final Answer: A",
+            "Aya-Vision-8B": "... Final Answer: A"
+        },
+        "image": "image_059_59_15_129_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "057_57_09_117",
+        "country": "hindi",
+        "question": "उत्तर भारत में आमतौर पर खेला जाने वाला कौन सा पारंपरिक खेल चित्र में दिखाया गया है?",
+        "options": [
+            "A) खो खो",
+            "B) कबड्डी",
+            "C) फील्ड हॉकी",
+            "D) कैरम"
+        ],
+        "correct_answer": "Final Answer: A",
+        "answer": {
+            "TowerVision-9B": "चित्र में दिखाया गया खेल खो खो है, जो उत्तर भारत में आमतौर पर खेला जाने वाला एक पारंपरिक खेल है। यह खेल बच्चों और वयस्कों दोनों द्वारा लोकप्रिय है और इसमें दौड़ और पकड़ने की गतिविधियाँ शामिल होती हैं। Final Answer: A",
+            "Qwen2.5VL-7B-Instruct": "... Final Answer: B",
+            "Llama3-Llava-Next-8B": "... Final Answer: B",
+            "CulturalPangea7B": "... Final Answer: B",
+            "Aya-Vision-8B": "... Final Answer: B"
+        },
+        "image": "image_057_57_09_117_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "027_27_04_046",
+        "country": "spain",
+        "question": "¿Qué vestimenta cultural llevan las mujeres en la imagen?",
+        "options": [
+            "A) Trajes de flamenca",
+            "B) Trajes de tauromaquia",
+            "C) Trajes de carnaval",
+            "D) Trajes tradicionales de flamenca"
+        ],
+        "correct_answer": "A) Trajes de flamenca",
+        "answer": {
+            "TowerVision-9B": "La imagen muestra a mujeres vestidas con trajes de flamenca, caracterizados por sus volantes y colores vibrantes. Estos trajes son típicos de la cultura española y se asocian con la danza flamenca. Final Answer: A) Trajes de flamenca",
+            "Qwen2.5VL-7B-Instruct": "... Final Answer: D) Trajes tradicionales de flamenca",
+            "Llama3-Llava-Next-8B": "... Final Answer: D) Trajes tradicionales de flamenca",
+            "CulturalPangea7B": ".. Final Answer: D) Trajes tradicionales de flamenca",
+            "Aya-Vision-8B": ".. Final Answer: A) Trajes de flamenca"
+        },
+        "image": "image_027_27_04_046_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "011_11_03_045",
+        "country": "dutch",
+        "question": " In welk land ligt Kasteel Slangenburg?",
+        "options": [
+            "A) Nederland",
+            "B) België",
+            "C) Duitsland",
+            "D) Frankrijk"
+        ],
+        "correct_answer": "A) Nederland",
+        "answer": {
+            "TowerVision-9B": "A) Nederland",
+            "Qwen2.5VL-7B-Instruct": "A) Nederland",
+            "Llama3-Llava-Next-8B": "C) Duitsland",
+            "CulturalPangea7B": "C) Duitsland",
+            "Aya-Vision-8B": "A) Nederland"
+        },
+        "image": "image_011_11_03_045_0.png"
+    },
+    {
+        "type": "cultural",
         "id": "071_71_03_003",
         "country": "cs",
         "question": "Jakým architektonickým stylem je Karlův most známý?",
@@ -31,12 +231,54 @@
         ],
         "answer": {
             "TowerVision9B": "D) renesance",
-            "Qwen2.5-7B": "A) Středověký kamenný oblouk",
+            "Qwen2.5VL-7B-Instruct": "A) Středověký kamenný oblouk",
             "LLaVa-Next7B": "C) baroko",
-            "Pixtral": "B) gotika",
-            "Phi4": "D) renesance"
+            "CulturalPangea7B": "B) gotika",
+            "Aya-Vision-8B": "D) renesance"
         },
         "correct_answer": "D) renesance",
         "image": "018_18_04_022_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "090_90_10_076",
+        "country": "germany",
+        "question": "Welcher Dichter ist in der Skulptur dargestellt, in der ein Lorbeerkranz zu sehen ist?",
+        "options": [
+            "A) Johann Wolfgang von Goethe",
+            "B) Friedrich Schiller",
+            "C) Bertolt Brecht",
+            "D) Thomas Mann"
+        ],
+        "correct_answer": "Final Answer: A",
+        "answer": {
+            "TowerVision-9B": "Final Answer: A",
+            "Qwen2.5VL-7B-Instruct": "Final Answer: B",
+            "Llama3-Llava-Next-8B": "Final Answer: B",
+            "CulturalPangea7B": "Final Answer: A",
+            "Aya-Vision-8B": "Final Answer: B"
+        },
+        "image": "image_090_90_10_076_0.png"
+    },
+    {
+        "type": "cultural",
+        "id": "001_1_10_076",
+        "country": "usa",
+        "question": "The image represents the Media in United States Which TV show features the character wearing the school tie and shirt?",
+        "options": [
+            "A) Heartstopper",
+            "B) Bridgerton",
+            "C) Derry Girls",
+            "D) Sex Education"
+        ],
+        "correct_answer": "The image shows a character wearing a school tie and shirt. This is a key detail that helps identify the TV show. Among the options provided, \"Heartstopper\" is the only show that features a character wearing a school tie and shirt.",
+        "answer": {
+            "TowerVision-9B": "The image shows a character wearing a school tie and shirt. This is a key detail that helps identify the TV show. Among the options provided, \"Heartstopper\" is the only show that features a character wearing a school tie and shirt.",
+            "Qwen2.5VL-7B-Instruct": "The character wearing the school tie and shirt is from the TV show \"Sex Education.\"",
+            "Llama3-Llava-Next-8B": "... A) Heartstopper",
+            "CulturalPangea7B": "... C) Derry Girls",
+            "Aya-Vision-8B": "... D) Sex Education"
+        },
+        "image": "image_001_1_10_076_0.png"
     }
 ]
