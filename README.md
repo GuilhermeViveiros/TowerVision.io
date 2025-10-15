@@ -2,77 +2,73 @@
 
 <div align="center">
 
-![TowerVision Logo](public/Tower.png)
+![TowerVision Logo](./public/Tower.png)
 
 **Understanding and Improving Multilinguality in Vision-Language Models**
 
-[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
-[![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+[![Website](https://img.shields.io/badge/🌐_Website-Live-blue?style=for-the-badge)](https://GuilhermeViveiros.github.io/TowerVision.io)
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE)
 
-*A comprehensive research website showcasing TowerVision: multilingual multimodal language models with cultural awareness*
-
-[🌐 Live Demo](https://towervision.io) • [📄 Paper](https://arxiv.org) • [💻 Code](https://github.com) • [🤗 Models](https://huggingface.co)
+*A comprehensive research website showcasing TowerVision, a fully open multilingual multimodal language model designed to bridge multilingual and multicultural gaps in visual understanding tasks.*
 
 </div>
 
 ---
 
-## 🎯 Overview
+## 🌟 Overview
 
-TowerVision.io is an interactive research website presenting groundbreaking work in multilingual multimodal AI. The site showcases **TowerVision**, a family of vision-language models designed to bridge multilingual and multicultural gaps in visual understanding tasks.
+TowerVision.io is the official research website for **TowerVision**, a groundbreaking multilingual multimodal language model (MLLM) that addresses the critical gap in cross-lingual visual understanding. This interactive website presents our research findings, model architecture, training methodology, and comprehensive evaluation results.
 
-### 🌟 Key Features
+### 🎯 Key Features
 
-- **🎨 Interactive Design**: Modern, responsive interface with smooth animations
-- **📊 Dynamic Results**: Live performance tables with real benchmark data
-- **🌍 Cultural Examples**: Interactive carousel showcasing multilingual capabilities
-- **📱 Mobile-First**: Fully responsive design optimized for all devices
-- **🎭 Professional UI**: Academic-grade presentation with elegant typography
+- **📊 Interactive Results Dashboard**: Comprehensive performance tables across multiple benchmarks
+- **🏗️ Model Architecture Visualization**: Detailed breakdown of TowerVision's three-stage training process  
+- **📈 VisionBlocks Dataset**: Complete overview of our 6M multilingual multimodal dataset
+- **🔬 Ablation Studies**: In-depth analysis of design choices and training strategies
+- **🌍 Cultural Examples Carousel**: Live demonstration of multilingual capabilities
+- **📱 Responsive Design**: Optimized for desktop, tablet, and mobile viewing
 
 ---
 
-## 🚀 Models & Performance
+## 🚀 Live Demo
 
-### TowerVision Family
+Visit the live website: **[TowerVision.io](https://GuilhermeViveiros.github.io/TowerVision.io)**
 
-| Model | Parameters | Specialty | Performance Highlights |
-|-------|------------|-----------|----------------------|
-| **TowerVision-2B** | 2B | Efficiency | Competitive performance with 75% fewer parameters |
-| **TowerVision-9B** | 9B | Performance | State-of-the-art multilingual multimodal understanding |
-| **TowerVideo** | 9B | Video | Extended capabilities for video understanding |
+### 🎮 Interactive Features
 
-### 📈 Benchmark Results
+- **Dynamic Cultural Examples**: Rotating carousel showcasing TowerVision's multilingual understanding
+- **Performance Tables**: Sortable and filterable benchmark results
+- **Smooth Navigation**: Seamless scrolling between research sections
+- **Clickable Author Profiles**: Direct links to researcher websites
+- **Institution Affiliations**: Clear mapping of authors to institutions
 
-- **20 Languages** supported with cultural awareness
-- **6M+ Training Samples** in VisionBlocks dataset
-- **SOTA Performance** on multilingual VLM benchmarks
-- **Cultural Understanding** across diverse contexts
+---
+
+## 🏛️ Research Overview
+
+### 📋 Abstract
+
+TowerVision introduces a fully open multilingual multimodal language model designed to bridge multilingual and multicultural gaps in visual understanding tasks. Trained on **VisionBlocks**, our diverse multilingual multimodal instruction tuning dataset spanning **20 languages** with cultural awareness and cross-lingual capabilities.
+
+### 🎯 Key Contributions
+
+1. **🤖 TowerVision Models**: 2B and 9B parameter multilingual multimodal models
+2. **📚 VisionBlocks Dataset**: 6M multilingual samples across diverse visual tasks  
+3. **🔬 Comprehensive Evaluation**: Performance analysis across multiple benchmarks
+4. **🌐 Cultural Awareness**: Focus on cross-cultural understanding and representation
 
 ---
 
 ## 🛠️ Technical Stack
 
-### Frontend Architecture
-```
-src/
-├── components/
-│   ├── Abstract.js          # Hero section with interactive carousel
-│   ├── ResultsSection.js    # Performance tables and insights
-│   ├── DataSection.js       # VisionBlocks dataset overview
-│   ├── ModelStructureSection.js  # Architecture details
-│   └── AblationSection.js   # Experimental analysis
-├── App.js                   # Main application component
-└── index.js                 # Application entry point
-```
+### Frontend Technologies
 
-### 🎨 Design System
-
-- **Typography**: Libre Baskerville (headings) + Inter (body)
-- **Color Palette**: TowerVision Blue (#2d5a87) + Professional grays
-- **Layout**: CSS Grid + Flexbox for responsive design
-- **Animations**: Smooth CSS transitions and hover effects
+- **⚛️ React 18.2.0** - Modern UI framework
+- **🎨 CSS3** - Custom styling with advanced animations
+- **📱 Responsive Design** - Mobile-first approach
+- **🔤 Google Fonts** - Piazzolla and Libre Baskerville typography
+- **🎯 Modern JavaScript** - ES6+ features and hooks
 
 ### 📦 Dependencies
 
@@ -86,289 +82,210 @@ src/
 }
 ```
 
+### 🏗️ Project Structure
+
+```
+TowerVision.io/
+├── 📁 public/
+│   ├── 🖼️ cultural_examples/     # Cultural understanding examples
+│   ├── 🏛️ institution_logos/    # University and company logos
+│   ├── 📊 data.json             # Cultural examples data
+│   └── 🗼 Tower.png             # TowerVision logo
+├── 📁 src/
+│   ├── 📁 components/
+│   │   ├── 📄 Abstract.js        # Hero section with authors
+│   │   ├── 📊 ResultsSection.js  # Performance benchmarks
+│   │   ├── 🏗️ ModelStructureSection.js  # Architecture details
+│   │   ├── 📚 DataSection.js     # VisionBlocks dataset
+│   │   └── 🔬 AblationSection.js # Ablation studies
+│   ├── 🎨 App.css               # Global styles
+│   └── ⚛️ App.js                # Main application component
+└── 📋 package.json              # Project configuration
+```
+
 ---
 
-## 🏃‍♂️ Quick Start
+## 🚀 Getting Started
 
-### Prerequisites
-- Node.js 16+ 
-- npm or yarn
+### 📋 Prerequisites
 
-### Installation
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
+
+### 🔧 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/GuilhermeViveiros/TowerVision.io.git
+   cd TowerVision.io
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm start
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
+
+### 🏗️ Build for Production
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-org/towervision-io.git
-cd towervision-io
-
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-
-# Build for production
 npm run build
 ```
 
-### 🌐 Development Server
+### 🚀 Deploy to GitHub Pages
+
 ```bash
-npm start
-# Opens http://localhost:3000
-```
-
-### 🏗️ Production Build
-```bash
-npm run build
-# Creates optimized build in ./build/
-```
-
----
-
-## 📁 Project Structure
-
-### Core Components
-
-#### 🎭 **Abstract Section**
-- Interactive hero with animated TowerVision logo
-- Cultural examples carousel with live data
-- Author information with institutional affiliations
-- Responsive button grid for resources
-
-#### 📊 **Results Section** 
-- Dynamic performance tables with hover effects
-- Best score highlighting and visual indicators
-- Key insights cards with statistics
-- Navigation to other sections
-
-#### 📚 **Data Section**
-- VisionBlocks dataset visualization
-- Construction challenges explanation
-- Dataset composition breakdown
-- Interactive statistics cards
-
-#### 🏗️ **Model Structure Section**
-- Three-stage training process timeline
-- Core component explanations
-- Key innovations showcase
-- Links to ablation studies
-
-### 🎨 Styling Architecture
-
-```css
-/* Modern CSS Features Used */
-- CSS Grid & Flexbox layouts
-- Custom properties (CSS variables)
-- Smooth transitions & animations
-- Responsive typography (clamp, rem units)
-- Modern color functions (hsl, rgba)
-- Advanced selectors (:hover, :focus-within)
-```
-
----
-
-## 🌍 Cultural Examples System
-
-### Interactive Carousel
-The site features a dynamic carousel showcasing TowerVision's cultural understanding:
-
-```javascript
-// Example data structure
-{
-  "country": "portugal",
-  "question": "Para que servia originalmente a Torre de Belém?",
-  "correct_answer": "D) Um forte defensivo primário",
-  "answer": {
-    "TowerVision9B": "D) Um forte defensivo primário",
-    "Qwen2.5-7B": "A) Um ponto de embarque...",
-    // ... other models
-  }
-}
-```
-
-### Features
-- **Auto-rotation**: 5-second intervals
-- **Manual navigation**: Click indicators
-- **Performance comparison**: Real-time model comparison
-- **Cultural context**: Authentic cultural questions
-
----
-
-## 🎯 Performance Optimization
-
-### 🚀 Speed Optimizations
-- **Code splitting**: React.lazy() for route-based splitting
-- **Image optimization**: WebP format with fallbacks
-- **CSS optimization**: Minimal, scoped stylesheets
-- **Bundle analysis**: Webpack bundle analyzer integration
-
-### 📱 Responsive Design
-```css
-/* Breakpoint Strategy */
-- Mobile: 320px - 767px
-- Tablet: 768px - 1023px  
-- Desktop: 1024px+
-- Large: 1400px+
-```
-
-### ♿ Accessibility
-- **WCAG 2.1 AA** compliance
-- **Semantic HTML** structure
-- **Keyboard navigation** support
-- **Screen reader** optimization
-- **Color contrast** ratios > 4.5:1
-
----
-
-## 🧪 Research Team
-
-### 👥 Contributors
-
-<table>
-<tr>
-<td align="center">
-<strong>Andre G. Viveiros</strong><br/>
-<sub>IT, IST</sub><br/>
-<a href="https://www.gviveiros.com/">🌐</a>
-</td>
-<td align="center">
-<strong>Patrick Fernandes</strong><br/>
-<sub>IT, IST, CMU</sub><br/>
-<a href="https://patricksf.dev/">🌐</a>
-</td>
-<td align="center">
-<strong>Andre Martins</strong><br/>
-<sub>IT, IST, Unbabel</sub><br/>
-<a href="https://andre-martins.github.io/">🌐</a>
-</td>
-<td align="center">
-<strong>Graham Neubig</strong><br/>
-<sub>CMU</sub><br/>
-<a href="https://www.phontron.com/">🌐</a>
-</td>
-</tr>
-</table>
-
-### 🏛️ Institutions
-- **IT** - Instituto de Telecomunicações
-- **IST** - Instituto Superior Técnico
-- **Unbabel** - Unbabel
-- **CMU** - Carnegie Mellon University
-
----
-
-## 📊 Analytics & Insights
-
-### 🔍 Key Metrics
-- **Performance Tables**: Real-time benchmark comparisons
-- **Cultural Examples**: 20+ language demonstrations  
-- **Model Variants**: 2B, 9B, and Video models
-- **Dataset Scale**: 6M+ multilingual samples
-
-### 📈 Benchmark Coverage
-- **TextVQA**: Visual question answering
-- **OCRBench**: Optical character recognition
-- **CC-OCR**: Cross-cultural OCR tasks
-- **ALM-Bench**: Multilingual understanding
-- **Multi30K**: Multimodal translation
-- **CoMMuTE**: Contrastive evaluation
-
----
-
-## 🚀 Deployment
-
-### 🌐 Hosting Options
-
-#### Netlify (Recommended)
-```bash
-# Build and deploy
-npm run build
-netlify deploy --prod --dir=build
-```
-
-#### Vercel
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel --prod
-```
-
-#### GitHub Pages
-```bash
-# Install gh-pages
-npm install --save-dev gh-pages
-
-# Add to package.json
-"homepage": "https://yourusername.github.io/towervision-io"
-
-# Deploy
-npm run build
 npm run deploy
 ```
 
-### 🔧 Environment Variables
-```bash
-# .env.local
-REACT_APP_API_URL=https://api.towervision.io
-REACT_APP_GA_TRACKING_ID=GA_MEASUREMENT_ID
-```
+---
+
+## 👥 Research Team
+
+### 🎓 Authors & Affiliations
+
+| Author | Institutions | Profile |
+|--------|-------------|---------|
+| **Andre G. Viveiros** ⭐ | IT¹, IST² | [🔗 Website](https://www.gviveiros.com/) |
+| **Patrick Fernandes** | IT¹, IST², CMU⁴ | [🔗 Website](https://patricksf.dev/) |
+| **Saul Santos** | IT¹, IST² | [🔗 Website](https://ssantos97.github.io/) |
+| **Sonal Sannigrahi** | IT¹, IST² | [🔗 Website](https://sonalsannigrahi.github.io/) |
+| **Emmanouil Zaranis** | IT¹, IST² | [🔗 Website](https://manzar96.github.io/) |
+| **Nuno M Guerreiro** | Unbabel³ | [🔗 Website](https://nunonmg.github.io/) |
+| **Amin Farajian** | Unbabel³ | [🔗 Profile](https://scholar.google.com/citations?user=b3LCxaYAAAAJ&hl=en) |
+| **Graham Neubig** | CMU⁴ | [🔗 Website](https://www.phontron.com/) |
+| **Andre Martins** | IT¹, IST², Unbabel³ | [🔗 Website](https://andre-martins.github.io/) |
+
+### 🏛️ Institutions
+
+1. **IT** - Instituto de Telecomunicações
+2. **IST** - Instituto Superior Técnico  
+3. **Unbabel** - Unbabel
+4. **CMU** - Carnegie Mellon University
+
+⭐ *Corresponding Author*
+
+---
+
+## 📊 Performance Highlights
+
+### 🎯 VLMs Performance on Several Benchmarks
+
+| Model | TextVQA | OCRBench | CC-OCR | ALM-Bench (en) | ALM-Bench (multi) |
+|-------|---------|----------|--------|----------------|-------------------|
+| **TowerVision-9B** | **73.6** | **69.7** | **56.3** | **83.6** | **85.2** |
+| **TowerVision-2B** | 68.1 | 58.6 | 46.1 | 77.1 | **81.1** |
+| Qwen2.5-VL-7B | 82.5 | **84.5** | **78.6** | 83.1 | 83.6 |
+
+### 🌐 Multimodal Translation Benchmarks
+
+| Model | Multi30K (en→cs) | Multi30K (en→de) | Multi30K (en→fr) | CoMMuTE Avg |
+|-------|------------------|------------------|------------------|-------------|
+| **TowerVision-9B** | **95.1** | **98.1** | **95.6** | **76.0** |
+| **TowerVision-2B** | 90.3 | 97.5 | 94.7 | 73.5 |
+| Qwen2.5-VL-7B | 83.9 | 97.1 | 93.2 | 77.8 |
+
+---
+
+## 🎨 Design Features
+
+### 🌈 Visual Design
+
+- **🎨 Modern Typography**: Piazzolla and Libre Baskerville fonts
+- **🎯 Professional Color Scheme**: TowerVision blue (#2d5a87) with neutral grays
+- **📱 Responsive Layout**: Mobile-first design with smooth breakpoints
+- **✨ Smooth Animations**: CSS transitions and hover effects
+- **🖼️ Interactive Elements**: Clickable authors, hoverable tables, animated carousel
+
+### 🔧 Technical Features
+
+- **⚡ Fast Loading**: Optimized images and efficient React components
+- **♿ Accessibility**: Proper ARIA labels and semantic HTML
+- **🔍 SEO Optimized**: Meta tags and structured data
+- **📊 Interactive Tables**: Sortable performance benchmarks
+- **🎮 Cultural Carousel**: Auto-rotating examples with manual controls
+
+---
+
+## 📈 Dataset Statistics
+
+### 📊 VisionBlocks Dataset
+
+- **📈 Total Samples**: 6M multilingual multimodal samples
+- **🌍 Languages**: 20 languages with cultural awareness
+- **📊 Multilingual Coverage**: 37% multilingual content
+- **🎯 Created Data**: 20% newly generated synthetic data
+- **🔄 Translation Quality**: CometKiwi threshold 0.85
+- **🎥 Video Support**: LLaVA-Video-178k with multilingual translation
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md).
+We welcome contributions to improve the TowerVision website! Here's how you can help:
 
 ### 🐛 Bug Reports
-- Use GitHub Issues
-- Include browser/device info
-- Provide reproduction steps
 
-### 💡 Feature Requests  
-- Describe the use case
-- Explain the expected behavior
-- Consider implementation complexity
+1. Check existing issues
+2. Create detailed bug report
+3. Include browser/device information
 
-### 🔧 Development Workflow
-```bash
-# 1. Fork the repository
-# 2. Create feature branch
-git checkout -b feature/amazing-feature
+### ✨ Feature Requests
 
-# 3. Make changes and commit
-git commit -m 'Add amazing feature'
+1. Describe the feature
+2. Explain the use case
+3. Provide mockups if possible
 
-# 4. Push to branch
-git push origin feature/amazing-feature
+### 🔧 Development
 
-# 5. Open Pull Request
-```
+1. Fork the repository
+2. Create feature branch
+3. Make changes with tests
+4. Submit pull request
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](./LICENSE) file for details.
+
+---
+
+## 📞 Contact
+
+### 📧 Corresponding Authors
+
+**Andre G. Viveiros & Andre Martins**  
+📧 Email: [andre.viveiros@tecnico.ulisboa.pt](mailto:andre.viveiros@tecnico.ulisboa.pt?subject=Question%20regarding%20TowerVision&body=Hey,%20I%20have%20a%20question%20regarding%20TowerVision%20...)
+
+### 🔗 Links
+
+- **🌐 Website**: [TowerVision.io](https://GuilhermeViveiros.github.io/TowerVision.io)
+- **📄 Paper**: Coming soon on arXiv
+- **💻 Code**: Repository links coming soon
+- **🤗 Models**: Hugging Face checkpoints coming soon
+- **📊 Dataset**: VisionBlocks dataset coming soon
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Research Community**: For advancing multilingual AI
-- **Open Source**: React, Node.js, and web technologies
-- **Design Inspiration**: Modern academic websites
-- **Cultural Data**: Community-contributed examples
+Special thanks to:
 
----
-
-## 📞 Contact & Support
-
-- **📧 Email**: [andre.viveiros@tecnico.ulisboa.pt](mailto:andre.viveiros@tecnico.ulisboa.pt)
-- **🐛 Issues**: [GitHub Issues](https://github.com/your-org/towervision-io/issues)
-- **💬 Discussions**: [GitHub Discussions](https://github.com/your-org/towervision-io/discussions)
-- **🐦 Twitter**: [@TowerVisionAI](https://twitter.com/towervisionai)
+- **🏛️ Instituto de Telecomunicações** for research support
+- **🎓 Instituto Superior Técnico** for academic collaboration  
+- **🚀 Unbabel** for industry partnership
+- **🏫 Carnegie Mellon University** for international collaboration
+- **🌍 Open Source Community** for tools and inspiration
 
 ---
 
@@ -376,9 +293,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ by the TowerVision Research Team**
 
-*Advancing multilingual AI for a more inclusive future*
+[![Website](https://img.shields.io/badge/🌐_Visit_Website-TowerVision.io-blue?style=for-the-badge)](https://GuilhermeViveiros.github.io/TowerVision.io)
 
-[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
-[![Powered by Research](https://img.shields.io/badge/Powered%20by-Research-FF6B6B?style=for-the-badge&logo=academia&logoColor=white)](https://towervision.io)
+*Bridging languages, cultures, and visual understanding* 🌍👁️🗣️
 
 </div>

@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   color: #333;
+  height: 100%;
 }
 
 code {
@@ -21,4 +22,9 @@ code {
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }

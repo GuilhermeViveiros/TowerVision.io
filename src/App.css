@@ -1,6 +1,10 @@
 .App {
-  min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Global scaling to make everything smaller */
+  transform: scale(0.9);
+  transform-origin: top center;
+  width: 111.11%; /* Compensate for scale to maintain full width */
+  margin-left: -5.56%; /* Center the scaled content */
 }
 
 /* Global Styles */
@@ -25,7 +29,7 @@
 .section-subtitle {
   font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   color: #7f8c8d;
   max-width: 800px;
   margin-left: auto;
@@ -82,6 +86,13 @@
 }
 
 @media (max-width: 768px) {
+  .App {
+    /* Adjust scaling for mobile */
+    transform: scale(0.95);
+    width: 105.26%;
+    margin-left: -2.63%;
+  }
+  
   .section-title {
     font-size: 2rem;
   }
@@ -92,5 +103,14 @@
   
   .container {
     padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    /* Less aggressive scaling on very small screens */
+    transform: scale(1);
+    width: 100%;
+    margin-left: 0;
   }
 }
