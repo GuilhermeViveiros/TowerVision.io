@@ -15,7 +15,7 @@ const DataSection = () => {
         <div className="data-content">
           <div className="visionblocks-overview">
             <div className="overview-image">
-              <img src={`${process.env.PUBLIC_URL}/vision-blocks.png`} alt="VisionBlocks Dataset Overview" className="visionblocks-image" />
+              <img src={`${process.env.PUBLIC_URL}/data_dist.png`} alt="VisionBlocks Dataset Overview" className="visionblocks-image" />
               <p className="image-caption">
                 <strong>Overview of the VisionBlocks dataset.</strong> Synthetic data are generated with Gemini 2.5 API, while translated augmented ones use Tower models. The dataset aggregates 6M multilingual samples across diverse visual tasks.
               </p>
