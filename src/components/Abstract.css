@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 0rem;
+  padding-top: -2rem;
   padding-bottom: 0rem;
 }
 
@@ -44,7 +44,7 @@
 .hero-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 3rem 4rem;
+  padding: 2rem 4rem;
   position: relative;
   z-index: 2;
   width: 100%;
@@ -56,7 +56,6 @@
   grid-template-columns: 1.1fr 1fr;
   gap: 3rem;
   align-items: flex-start;
-  margin-bottom: 2rem;
 }
 
 .hero-content {
@@ -74,19 +73,23 @@
 
 .tower-container-title {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 500px;
+  height: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 1.6rem;
   background: #ffffff;
   border-radius: 1px;
   flex-shrink: 0;
 }
 
 .tower-image-title {
-  width: 80px;
-  height: 80px;
+  width: 500px;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
 }
 
 .eye-overlay-title {
@@ -349,6 +352,30 @@
   transform: scale(1.05);
 }
 
+.first-logo {
+  height: 50px !important;
+}
+
+.last-logo {
+  height: 85px !important;
+}
+
+.affiliation-item-with-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748b;
+  text-align: center;
+  max-width: 100px;
+  line-height: 1.2;
+}
+
 .affiliation-name {
   font-size: 1rem;
   font-weight: 600;
@@ -359,6 +386,37 @@
 .affiliation-separator {
   color: #94a3b8;
   font-weight: 300;
+}
+
+.affiliations-text {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.affiliation-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.affiliation-item {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.affiliation-item sup {
+  color: #2d5a87;
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.work-footnote {
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .corresponding-authors {
@@ -491,8 +549,9 @@
 }
 
 .btn-secondary:hover {
-  background: #f3f4f6;
+  background: #f9fafb;
   border-color: #2d5a87;
+  color: #000000;
 }
 
 .hero-visual {
@@ -506,6 +565,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -2rem;
 }
 
 .example-card {
@@ -724,12 +784,13 @@
 .carousel-indicators {
   display: flex;
   gap: 0.5rem;
+  
   margin-top: 1rem;
 }
 
 .indicator {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #cbd5e1;
   cursor: pointer;
@@ -833,6 +894,16 @@
     line-height: 1.4;
   }
 
+  .tower-container-title {
+    width: 350px;
+    margin-bottom: 0.4rem;
+  }
+
+  .tower-image-title {
+    width: 350px;
+    max-height: 400px;
+  }
+
   .authors-group {
     gap: 4.5rem;
   }
@@ -877,6 +948,16 @@
   .paper-subtitle-text {
     font-size: 0.9rem;
     line-height: 1.4;
+  }
+
+  .tower-container-title {
+    width: 280px;
+    margin-bottom: 0.3rem;
+  }
+
+  .tower-image-title {
+    width: 280px;
+    max-height: 320px;
   }
 
   .paper-title {

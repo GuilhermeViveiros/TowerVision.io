@@ -86,7 +86,7 @@ const ResultsSection = () => {
 
          <div className="radar-chart-container">
            <img 
-             src={`${process.env.PUBLIC_URL}/results.png`}
+             src={`${process.env.PUBLIC_URL}/res.png`}
              alt="Benchmark Performance Comparison - Radar Chart showing TowerVision model performance across multiple benchmarks"
              className="radar-chart-image"
            />

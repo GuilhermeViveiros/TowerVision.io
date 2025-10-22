@@ -8,9 +8,13 @@ const HeroSection = () => {
 
   useEffect(() => {
     // Fetch the cultural examples data
+    console.log('PUBLIC_URL:', process.env.PUBLIC_URL);
     fetch(`${process.env.PUBLIC_URL}/data.json`)
       .then(response => response.json())
-      .then(data => setExamples(data))
+      .then(data => {
+        console.log('Loaded examples data:', data);
+        setExamples(data);
+      })
       .catch(error => console.error('Error loading examples:', error));
   }, []);
 
@@ -23,6 +27,29 @@ const HeroSection = () => {
       return () => clearInterval(interval);
     }
   }, [examples]);
+
+  useEffect(() => {
+    // Add keyboard navigation
+    const handleKeyPress = (event) => {
+      if (examples.length === 0) return;
+      
+      switch (event.key) {
+        case 'ArrowLeft':
+          event.preventDefault();
+          setCurrentExample(prev => prev === 0 ? examples.length - 1 : prev - 1);
+          break;
+        case 'ArrowRight':
+          event.preventDefault();
+          setCurrentExample(prev => (prev + 1) % examples.length);
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [examples.length]);
 
   const getAnswerClass = (modelName, answer, correctAnswer, exampleType) => {
     let isCorrect = false;
@@ -79,20 +106,8 @@ const HeroSection = () => {
           <div className="hero-content">
             <div className="paper-title">
                 <div className="tower-container-title">
-                  <img src={`${process.env.PUBLIC_URL}/Tower.png`} alt="Tower" className="tower-image-title" />
-                  <div className="eye-overlay-title">
-                    <div className="custom-eye">
-                      <div className="eye-white">
-                        <div className="eye-pupil">
-                          <div className="eye-shine"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <img src={`${process.env.PUBLIC_URL}/TowerVision.png`} alt="TowerVision - Understanding and Improving Multilinguality in Vision-Language Models" className="tower-image-title" />
                 </div>
-              <h1 className="paper-title-text">
-                TowerVision
-              </h1>
               <h2 className="paper-subtitle-text">
                 Understanding and Improving Multilinguality in Vision-Language Models
               </h2>
@@ -101,8 +116,8 @@ const HeroSection = () => {
             <div className="model-descriptions">
               <div className="model-item">
                 <div className="model-text">
-                  <span className="model-name">TowerFamily:</span>
-                  <span className="model-desc"> collection of strong multimodal models featuring <a href="https://huggingface.co/utter-project/TowerVision-2B" target="_blank" rel="noopener noreferrer" className="model-link"><strong>TowerVision-2B/9B</strong></a> for advanced image understanding and <a href="https://huggingface.co/utter-project/TowerVideo-2B" target="_blank" rel="noopener noreferrer" className="model-link"><strong>TowerVideo-2B/9B</strong></a> for sophisticated video comprehension, with superior multimodal multilingual translation capabilities and cultural awareness across 20 languages*.</span>
+                  <span className="model-name">TowerVision:</span>
+                  <span className="model-desc">collection of strong multimodal models featuring <a href="https://huggingface.co/utter-project/TowerVision-2B" target="_blank" rel="noopener noreferrer" className="model-link"><strong>TowerVision-2B/9B</strong></a> for advanced image understanding and <a href="https://huggingface.co/utter-project/TowerVideo-2B" target="_blank" rel="noopener noreferrer" className="model-link"><strong>TowerVideo-2B/9B</strong></a> for sophisticated video comprehension, with superior multimodal multilingual translation capabilities and cultural awareness across 20 languages*.</span>
                 </div>
               </div>
 
@@ -121,24 +136,31 @@ const HeroSection = () => {
             </div>
 
             <div className="hero-buttons">
-              <button className="btn-primary">
-                📄 arXiv
+              <button className="btn-secondary" style={{height: '3.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <img 
+                  src={`${process.env.PUBLIC_URL}/arxiv-logo.svg`} 
+                  alt="arXiv" 
+                  style={{width: '62px', height: '20px'}}
+                />
               </button>
               <button 
                 className="btn-secondary"
+                style={{height: '3.5rem', width: '122px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                 onClick={() => window.open('https://github.com/GuilhermeViveiros/LLaVA-NeXT', '_blank')}
               >
                 💻 Code
               </button>
               <button 
                 className="btn-secondary"
+                style={{height: '3.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                 onClick={() => window.open('https://huggingface.co/collections/utter-project/towervision-689a10be35396972889cadba', '_blank')}
               >
-                🤗 Checkpoints
+                🤗 TowerVision
               </button>
               <div className="button-with-tooltip">
                 <button 
                   className="btn-secondary"
+                  style={{height: '3.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                   onClick={(e) => {
                     e.preventDefault();
                     setShowTooltip(true);
@@ -161,6 +183,7 @@ const HeroSection = () => {
             <div className="examples-carousel">
               {examples.length > 0 && (
                 <div className="example-card">
+                  {console.log('Current example:', examples[currentExample])}
                   <div className="example-header">
                     <div className="country-flag">
                       {getFlagEmoji(examples[currentExample].country)}
@@ -175,9 +198,23 @@ const HeroSection = () => {
                   
                   <div className="example-image">
                       <img 
-                       src={`${process.env.PUBLIC_URL}/${examples[currentExample].type === 'cultural' ? 'cultural_examples' : 'translation_examples'}/${examples[currentExample].image}`} 
+                       src={`${process.env.PUBLIC_URL || ''}/${examples[currentExample].type === 'cultural' ? 'cultural_examples' : 'translation_examples'}/${examples[currentExample].image}`} 
                        alt={`${examples[currentExample].type} example`} 
                         className="cultural-image"
+                        style={{ minHeight: '180px', backgroundColor: '#f0f0f0' }}
+                        onError={(e) => {
+                          console.error('Image failed to load:', e.target.src);
+                          console.error('PUBLIC_URL:', process.env.PUBLIC_URL);
+                          console.error('Image type:', examples[currentExample].type);
+                          console.error('Image name:', examples[currentExample].image);
+                          e.target.style.border = '2px solid red';
+                          e.target.style.display = 'block';
+                          e.target.style.backgroundColor = '#ffeeee';
+                          e.target.alt = 'Image failed to load';
+                        }}
+                        onLoad={() => {
+                          console.log('Image loaded successfully:', `${process.env.PUBLIC_URL || ''}/${examples[currentExample].type === 'cultural' ? 'cultural_examples' : 'translation_examples'}/${examples[currentExample].image}`);
+                        }}
                       />
                   </div>
 
@@ -268,7 +305,7 @@ const HeroSection = () => {
                   rel="noopener noreferrer"
                   className="author-name author-link"
                 >
-                  Patrick Fernandes <sup>1,2,4</sup>
+                  Patrick Fernandes <sup>*1,2,3</sup>
                 </a>
                 
               </div>
@@ -308,7 +345,7 @@ const HeroSection = () => {
                   rel="noopener noreferrer"
                   className="author-name author-link"
                 >
-                  Nuno M Guerreiro <sup>3</sup>
+                  Nuno M Guerreiro <sup>†4</sup>
                 </a>
                 <a 
                   href="https://scholar.google.com/citations?user=b3LCxaYAAAAJ&hl=en" 
@@ -316,7 +353,15 @@ const HeroSection = () => {
                   rel="noopener noreferrer"
                   className="author-name author-link"
                 >
-                  Amin Farajian <sup>3</sup>
+                  Amin Farajian <sup>†5</sup>
+                </a>
+                <a 
+                  href="https://pierrecolombo.github.io/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="author-name author-link"
+                >
+                  Pierre Colombo <sup>6</sup>
                 </a>
                 <a 
                   href="https://www.phontron.com/" 
@@ -324,7 +369,7 @@ const HeroSection = () => {
                   rel="noopener noreferrer"
                   className="author-name author-link"
                 >
-                  Graham Neubig <sup>4</sup>
+                  Graham Neubig <sup>3</sup>
                 </a>
                 <a 
                   href="https://andre-martins.github.io/" 
@@ -332,35 +377,56 @@ const HeroSection = () => {
                   rel="noopener noreferrer"
                   className="author-name author-link"
                 >
-                  Andre Martins <sup>1,2,3</sup>
+                  Andre Martins <sup>†1,2,5,7</sup>
                 </a>
               </div>
             </div>
           
           <div className="affiliations">
             <div className="affiliation-group">
-              <img src={`${process.env.PUBLIC_URL}/institution_logos/it.png`} alt="IT" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/it.png`} alt="IT" className="affiliation-logo first-logo" />
               <img src={`${process.env.PUBLIC_URL}/institution_logos/ist.jpg`} alt="IST" className="affiliation-logo" />
-              <img src={`${process.env.PUBLIC_URL}/institution_logos/unbabel.png`} alt="Unbabel" className="affiliation-logo" />
               <img src={`${process.env.PUBLIC_URL}/institution_logos/cmu.png`} alt="CMU" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/sword.png`} alt="Sword Health" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/transperfect.jpg`} alt="TransPerfect" className="affiliation-logo" />
+              <img src={`${process.env.PUBLIC_URL}/institution_logos/centralesupelec.png`} alt="CentraleSupélec" className="affiliation-logo" />
+               <img src={`${process.env.PUBLIC_URL}/institution_logos/ellis.jpg`} alt="ELLIS Unit Lisbon" className="affiliation-logo last-logo" />
             </div>
+          </div>
+          
+          <div className="affiliations-text">
+            <div className="affiliation-list">
+              <div className="affiliation-item"><sup>1</sup> Instituto de Telecomunicações</div>
+              <div className="affiliation-item"><sup>2</sup> Instituto Superior Técnico</div>
+              <div className="affiliation-item"><sup>3</sup> Carnegie Mellon University</div>
+              <div className="affiliation-item"><sup>4</sup> Sword Health</div>
+              <div className="affiliation-item"><sup>5</sup> TransPerfect</div>
+              <div className="affiliation-item"><sup>6</sup> MICS, CentraleSupélec, Université Paris-Saclay</div>
+              <div className="affiliation-item"><sup>7</sup> ELLIS Unit Lisbon</div>
+            </div>
+          </div>
+          
+          <div className="work-footnote">
+            <p className="footnote-text">
+              <sup>†</sup> Work done while at Unbabel.
+            </p>
           </div>
           
           <div className="corresponding-authors">
             <div className="corresponding-text">
-              Corresponding to: <a 
+                <sup>*</sup>Joint first authors. Corresponding author: <a 
                 href="mailto:andre.viveiros@tecnico.ulisboa.pt?subject=Question regarding TowerVision&body=Hey, I have a question regarding TowerVision ..." 
                 className="email-addresses"
               >
-                (andre.viveiros, andre.martins)@tecnico.ulisboa.pt
-              </a>
+                andre.viveiros@tecnico.ulisboa.pt
+              </a>.
             </div>
           </div>
         </div>
 
         <div className="hero-description">
           <p className="hero-text">
-            We introduce TowerVision, a fully open multilingual multimodal language model (MLLM) designed to bridge 
+            We introduce TowerVision, a fully open-source multilingual Vision-Language Model (VLMs) designed to bridge 
             multilingual and multicultural gaps in visual understanding tasks. TowerVision is trained on VisionBlocks, a diverse 
             multilingual multimodal instruction tuning dataset spanning 20 languages with cultural awareness and cross-lingual capabilities.
           </p>
