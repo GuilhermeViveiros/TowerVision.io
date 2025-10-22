@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://guilhermeviveiros.github.io/TowerVision.io/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
