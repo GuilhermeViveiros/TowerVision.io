@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![TowerVision Logo](./public/Tower.png)
+![TowerVision Logo](./public/TowerVision.png)
 
 **Understanding and Improving Multilinguality in Vision-Language Models**
 
