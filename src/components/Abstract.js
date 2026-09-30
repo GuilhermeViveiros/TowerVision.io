@@ -4,7 +4,6 @@ import './Abstract.css';
 const HeroSection = () => {
   const [currentExample, setCurrentExample] = useState(0);
   const [examples, setExamples] = useState([]);
-  const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
     // Fetch the cultural examples data
@@ -136,45 +135,45 @@ const HeroSection = () => {
             </div>
 
             <div className="hero-buttons">
-              <button className="btn-secondary" style={{height: '3.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <button 
+                className="btn-secondary" 
+                style={{height: '3.5rem', width: '88px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                onClick={() => window.open('https://www.arxiv.org/abs/2510.21849', '_blank')}
+              >
                 <img 
                   src={`${process.env.PUBLIC_URL}/arxiv-logo.svg`} 
                   alt="arXiv" 
-                  style={{width: '62px', height: '20px'}}
+                  style={{width: '65px', height: '23px'}}
                 />
               </button>
               <button 
                 className="btn-secondary"
-                style={{height: '3.5rem', width: '122px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                style={{height: '3.5rem', width: '105px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem'}}
                 onClick={() => window.open('https://github.com/GuilhermeViveiros/LLaVA-NeXT', '_blank')}
               >
                 💻 Code
               </button>
               <button 
                 className="btn-secondary"
-                style={{height: '3.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                style={{height: '3.5rem', width: '140px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem'}}
                 onClick={() => window.open('https://huggingface.co/collections/utter-project/towervision-689a10be35396972889cadba', '_blank')}
               >
                 🤗 TowerVision
               </button>
-              <div className="button-with-tooltip">
-                <button 
-                  className="btn-secondary"
-                  style={{height: '3.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowTooltip(true);
-                    setTimeout(() => setShowTooltip(false), 3000);
-                  }}
-                >
-                  📊 VisionBlocks
-                </button>
-                {showTooltip && (
-                  <div className="button-tooltip">
-                    VisionBlocks dataset will be released in the upcoming weeks!
-                  </div>
-                )}
-              </div>
+              <button
+                className="btn-secondary"
+                style={{height: '3.5rem', width: '140px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem'}}
+                onClick={() => window.open('https://huggingface.co/datasets/utter-project/VisionBlocks', '_blank')}
+              >
+                📊 VisionBlocks
+              </button>
+              <button 
+                className="btn-secondary"
+                style={{height: '3.5rem', width: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem'}}
+                onClick={() => window.open('https://sardine-lab.github.io/index.html', '_blank')}
+              >
+                🐟 Sardine Lab
+              </button>
         
             </div>
           </div>

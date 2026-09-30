@@ -10,6 +10,9 @@ const DataSection = () => {
           <p className="section-subtitle">
             VisionBlocks: A comprehensive multilingual multimodal instruction tuning dataset spanning 20 languages with cultural awareness
           </p>
+          <p className="section-subtitle" style={{marginTop: '0.75rem'}}>
+            🤗 <a href="https://huggingface.co/datasets/utter-project/VisionBlocks" target="_blank" rel="noopener noreferrer" className="model-link">View VisionBlocks on Hugging Face</a>
+          </p>
         </div>
         
         <div className="data-content">
